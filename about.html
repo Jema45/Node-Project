@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Display</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body{
+            background-color: #2C5F2D;
+        }
+
+        .navbar{
+    width: 100%;
+    height: 75px;
+    margin: auto;
+    background: #6B8E23;
+}
+
+.logo{
+    color: #FFEAB5;
+    font-size: 35px;
+    font-family: arial;
+    padding-left: 20px;
+    float: left;
+    padding-top: 10px;
+}
+
+.menu{
+    width: 400px;
+    float: left;
+    height: 70px;
+}
+
+ul{
+    float: left;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+ul li{
+    list-style: none;
+    margin-left: 62px;
+    margin-top: 27px;
+    font-size: 14px;
+}
+
+ul li a{
+    text-decoration: none;
+    color: #FFEAB5;
+    font-family: arial;
+    font-weight: bold;
+    transition: 0.4s ease-in-out;
+}
+
+ul li a:hover{
+    color: #FFD700;
+}
+
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <div class="icon">
+            <h2 class="logo">TO-DO LIST</h2>
+        </div>
+        <div class="menu">
+            <ul>
+                <li><a href="home.html">HOME</a></li>
+                <li><a href="about.html">ABOUT</a></li>
+                <li><a href="contact.html">CONTACT</a></li>
+            </ul>
+        </div>
+        </div>
+    <h1>Stored Data</h1>
+    <ul id="dataList"></ul>
+
+    <script>
+        // Fetch data from the JSON endpoint and render it
+        fetch('/data')
+            .then(response => response.json())
+            .then(data => {
+                const list = document.getElementById('dataList');
+                data.forEach(item => {
+                    const listItem = document.createElement('li');
+                    listItem.textContent = `Name: ${item.name}, Last Name: ${item.lastName}, Email: ${item.Email}, Mobile: ${item.mobile}, Message: ${item.message}, `;
+                    list.appendChild(listItem);
+                });
+            });
+    </script>
+</body>
+</html>

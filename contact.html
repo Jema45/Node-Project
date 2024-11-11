@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        *{
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+font-family: Arial, Helvetica, sans-serif;
+}
+       body{
+            background-color: #2C5F2D;
+        }
+
+        .navbar{
+    width: 100%;
+    height: 75px;
+    margin: auto;
+    background: #6B8E23;
+}
+
+.logo{
+    color: #FFEAB5;
+    font-size: 35px;
+    font-family: arial;
+    padding-left: 20px;
+    float: left;
+    padding-top: 10px;
+}
+
+.menu{
+    width: 400px;
+    float: left;
+    height: 70px;
+}
+
+ul{
+    float: left;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+ul li{
+    list-style: none;
+    margin-left: 62px;
+    margin-top: 27px;
+    font-size: 14px;
+}
+
+ul li a{
+    text-decoration: none;
+    color: #FFEAB5;
+    font-family: arial;
+    font-weight: bold;
+    transition: 0.4s ease-in-out;
+}
+
+ul li a:hover{
+    color: #FFD700;
+}
+
+.container{
+min-height: 100vh;
+display: flex;
+justify-content: center;
+align-items: center;
+background-repeat: no-repeat;
+background-size: cover;
+background-position: center;
+}
+
+.container form{
+width: 470px;
+height: 500px;
+display: flex;
+justify-content: center;
+border-radius: 10px;
+background: #ffe8ad;
+backdrop-filter: blur(30px);
+flex-wrap: wrap;
+}
+
+.container form h1{
+/* color: whitesmoke; */ color: black;
+/* font-weight: 700; */
+line-height: 2;
+margin-top: 20px;
+width: 500px;
+text-align: center;
+}
+
+.container form input{
+width: 200px;
+height: 50px;
+/* padding-left: 10px; */
+outline: none;
+border: none;
+/* font-size: 20px; */
+margin-bottom: 10px;
+background: none;
+/* border-bottom: 2px solid whitesmoke; */ border-bottom: 2px solid black;
+/* color: whitesmoke; */ color: black;
+}
+
+.container form input::placeholder{
+/* color: whitesmoke; */color: black;
+}
+
+.container form #lastName, .container form #mobile{
+margin-left: 20px;
+}
+
+.container form h4{
+/* color: whitesmoke; */color: black;
+font-weight: 300;
+width: 600px;
+margin-top: 20px;
+}
+
+.container form textarea{
+background: none;
+/* border: none;  */
+border-bottom: 2px solid black;
+/* color: whitesmoke; */color: black;
+/* font-weight: 200; */
+/* font-size: 20px; */
+padding: 10px;
+/* outline: none; */
+ min-height: 90px;
+max-height: 90px;
+min-width: 420px;
+max-height: 420px; 
+}
+
+/* .container form h4{
+/* font-size: 20px; 
+} */
+
+.container form #button{
+border: none;
+background: #6B8E23;
+border-radius: 5px;
+margin-top: 20px;
+font-weight: 600;
+/* font-size: 24px; */
+color: black;
+width: 200px;
+height: 60px;
+padding: 0;
+margin-bottom: 30px;
+transition: 0.3s;
+}
+
+.container form #button:hover{
+background: #FFD700;
+/* color: black; */
+transition: .5s ease-in-out;
+}
+     </style>
+
+
+</head>
+<body>
+    <div class="navbar">
+        <div class="icon">
+            <h2 class="logo">TO-DO LIST</h2>
+        </div>
+        <div class="menu">
+            <ul>
+                <li><a href="home.html">HOME</a></li>
+                <li><a href="about.html">ABOUT</a></li>
+                <li><a href="contact.html">CONTACT</a></li>
+            </ul>
+        </div>
+        </div>
+    <div class="container">
+        <form id="form" action="/submit" method="post">
+            <h1>Contact Us Form</h1>
+            <input type="text" id="name" name="name" placeholder="Name" required>
+            <input type="text" id="lastName" name="lastName" placeholder="Last Name" required>
+            <input type="email" id="Email" name="Email" placeholder="Email" required>
+            <input type="text" id="mobile" name="mobile" placeholder="Mobile" required>
+            <h4>Type Your Message Here...</h4>
+            <textarea name="message" required ></textarea>
+            <input type="submit" value="send" id="button">
+
+        </form>
+    </div>
+</body>
+</html>
